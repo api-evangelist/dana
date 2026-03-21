@@ -1,0 +1,185 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket API
+  description: >-
+    The Dana Aftermarket API provides programmatic access to Dana's aftermarket
+    e-commerce platform with APIs for part search, availability, pricing,
+    ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+  - url: https://api.danaaftermarket.com
+tags:
+  - name: Parts
+    description: Search and retrieve part information.
+  - name: Availability
+    description: Check inventory availability.
+  - name: Pricing
+    description: Retrieve pricing information.
+  - name: Orders
+    description: Place and manage orders.
+  - name: Shipping
+    description: Track shipments and delivery status.
+paths:
+  /parts/search:
+    get:
+      operationId: searchParts
+      summary: Search parts by application
+      description: >-
+        Searches for parts by vehicle application including year, make, model,
+        and component type.
+      tags:
+        - Parts
+      parameters:
+        - name: year
+          in: query
+          description: Vehicle year.
+          schema:
+            type: string
+        - name: make
+          in: query
+          description: Vehicle make.
+          schema:
+            type: string
+        - name: model
+          in: query
+          description: Vehicle model.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /parts/{partNumber}:
+    get:
+      operationId: getPartDetails
+      summary: Get part details
+      description: >-
+        Retrieves detailed information for a specific part including
+        specifications, compatibility, and images.
+      tags:
+        - Parts
+      parameters:
+        - name: partNumber
+          in: path
+          required: true
+          description: The Dana part number.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /availability:
+    get:
+      operationId: checkAvailability
+      summary: Check inventory availability
+      description: >-
+        Checks real-time inventory availability from Dana's global distribution
+        network for specified parts.
+      tags:
+        - Availability
+      parameters:
+        - name: partNumber
+          in: query
+          required: true
+          description: The Dana part number to check.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /pricing:
+    get:
+      operationId: getPricing
+      summary: Get pricing
+      description: >-
+        Retrieves current pricing for specified parts based on customer
+        account and quantity.
+      tags:
+        - Pricing
+      parameters:
+        - name: partNumber
+          in: query
+          required: true
+          description: The Dana part number.
+          schema:
+            type: string
+        - name: quantity
+          in: query
+          description: Quantity for pricing calculation.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+  /orders:
+    post:
+      operationId: placeOrder
+      summary: Place an order
+      description: >-
+        Places a new order for parts through Dana's aftermarket platform
+        with shipping and billing details.
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      partNumber:
+                        type: string
+                      quantity:
+                        type: integer
+                shippingAddress:
+                  type: object
+      responses:
+        '201':
+          description: Order placed successfully
+  /orders/{orderId}/status:
+    get:
+      operationId: getOrderStatus
+      summary: Get order status
+      description: >-
+        Retrieves the current status of an order including processing,
+        shipping, and delivery information.
+      tags:
+        - Orders
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          description: The order identifier.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+  /shipping/notifications:
+    get:
+      operationId: getShippingNotifications
+      summary: Get advanced shipping notifications
+      description: >-
+        Retrieves advanced shipping notifications including packing slips,
+        tracking numbers, and estimated delivery dates.
+      tags:
+        - Shipping
+      parameters:
+        - name: orderId
+          in: query
+          description: Filter by order identifier.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
