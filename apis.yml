@@ -1,5 +1,6 @@
 aid: dana
-url: https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml
 apis:
   - aid: dana:aftermarket-api
     name: Dana Aftermarket API
@@ -9,7 +10,8 @@ apis:
       - Drivetrain
       - eCommerce
       - Supply Chain
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: 
+      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.danaaftermarket.com
     humanURL: https://developer.danaaftermarket.com/
     properties:
@@ -27,3 +29,6 @@ apis:
       enable customers to display inventory availability from Dana's global
       distribution network, obtain real-time quotes, and manage orders with
       confirmation, shipping details, packing slips, and tracking numbers.
+description: >-
+  Dana Incorporated is a global supplier of fully integrated drivetrain and electrified
+  propulsion systems for all passenger, commercial, and off-highway vehicles.
