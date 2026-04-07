@@ -9,14 +9,14 @@ info:
 servers:
   - url: https://api.danaaftermarket.com
 tags:
-  - name: Parts
-    description: Search and retrieve part information.
   - name: Availability
     description: Check inventory availability.
-  - name: Pricing
-    description: Retrieve pricing information.
   - name: Orders
     description: Place and manage orders.
+  - name: Parts
+    description: Search and retrieve part information.
+  - name: Pricing
+    description: Retrieve pricing information.
   - name: Shipping
     description: Track shipments and delivery status.
 paths:
