@@ -1,0 +1,40 @@
+extends:
+  - spectral:oas
+rules:
+  dana-info-contact:
+    description: API info should include a contact for Dana's developer relations team.
+    given: $.info
+    severity: warn
+    then:
+      field: contact
+      function: truthy
+  dana-base-url:
+    description: Servers should reference the api.danaaftermarket.com base URL.
+    given: $.servers[*].url
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "danaaftermarket\\.com"
+  dana-api-key-security:
+    description: API should declare an X-API-Key apiKey security scheme.
+    given: $.components.securitySchemes
+    severity: error
+    then:
+      field: apiKey
+      function: truthy
+  dana-operation-tags:
+    description: Operations should be tagged Parts, Availability, Pricing, Orders, or Shipping.
+    given: $.paths[*][*]
+    severity: warn
+    then:
+      field: tags
+      function: truthy
+  dana-part-number-required:
+    description: Endpoints touching a single part must accept partNumber as a path or query parameter.
+    given: $.paths
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "partNumber"

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/json-schema/order.json",
+  "title": "Order",
+  "description": "An aftermarket order placed through the Dana Aftermarket API.",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "orderId": {"type": "string"},
+    "status": {"type": "string"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["partNumber", "quantity"],
+        "properties": {
+          "partNumber": {"type": "string"},
+          "quantity": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "shippingAddress": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "street": {"type": "string"},
+        "city": {"type": "string"},
+        "region": {"type": "string"},
+        "postalCode": {"type": "string"},
+        "country": {"type": "string"}
+      }
+    },
+    "trackingNumber": {"type": "string"}
+  }
+}

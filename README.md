@@ -7,13 +7,14 @@ Dana Incorporated is a global supplier of drivetrain and e-propulsion systems fo
 - **Type:** Contract
 - **Position:** Consuming
 - **Access:** 3rd-Party
+- **xType:** company
 
 ## Tags:
  - Auto Parts, Aftermarket, Drivetrain, eCommerce, Supply Chain
 
 ## Timestamps
 - **Created:** 2026-03-21
-- **Modified:** 2026-03-21
+- **Modified:** 2026-04-28
 
 ## APIs
 
@@ -22,6 +23,8 @@ The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-co
 
 **Human URL:** [https://developer.danaaftermarket.com/](https://developer.danaaftermarket.com/)
 
+**Base URL:** https://api.danaaftermarket.com
+
 #### Tags:
  - Auto Parts, Aftermarket, Drivetrain, eCommerce, Supply Chain
 
@@ -29,10 +32,16 @@ The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-co
 - [Portal](https://developer.danaaftermarket.com/)
 - [Documentation](https://developer.danaaftermarket.com/)
 - [OpenAPI](openapi/dana-aftermarket-api-openapi.yml)
+- [JSONSchema - Part](json-schema/part.json)
+- [JSONSchema - Order](json-schema/order.json)
+- [Rules](rules/dana-aftermarket-api-rules.yml)
+- [Capabilities](capabilities/dana-aftermarket-api-capabilities.yml)
 
 ## Common Properties
-- [Portal](https://developer.danaaftermarket.com/)
 - [Website](https://www.dana.com/)
+- [Portal](https://developer.danaaftermarket.com/)
+- [JSON-LD](json-ld/dana-context.jsonld)
+- [Vocabulary](vocabulary/dana-vocabulary.yml)
 
 ## Maintainers
 **FN:** API Evangelist

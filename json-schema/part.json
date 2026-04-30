@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/json-schema/part.json",
+  "title": "Part",
+  "description": "A Dana aftermarket part with identifier, descriptive metadata, and compatibility information.",
+  "type": "object",
+  "required": ["partNumber"],
+  "properties": {
+    "partNumber": {"type": "string", "description": "The Dana part number."},
+    "description": {"type": "string"},
+    "category": {"type": "string"},
+    "brand": {"type": "string"},
+    "make": {"type": "string"},
+    "model": {"type": "string"},
+    "year": {"type": "string"},
+    "specifications": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "images": {
+      "type": "array",
+      "items": {"type": "string", "format": "uri"}
+    }
+  }
+}

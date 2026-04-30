@@ -1,0 +1,50 @@
+name: Dana Aftermarket API Capabilities
+description: >-
+  Capabilities exposed by the Dana Aftermarket API for parts catalog,
+  availability, pricing, ordering, and shipping integration with partner
+  systems.
+capabilities:
+  - name: Search Parts by Application
+    description: Find parts that fit a vehicle by year, make, model, and component type.
+    operationId: searchParts
+    method: GET
+    path: /parts/search
+  - name: Get Part Details
+    description: Retrieve specifications, images, and compatibility for a specific part.
+    operationId: getPartDetails
+    method: GET
+    path: /parts/{partNumber}
+  - name: Check Inventory Availability
+    description: Query real-time availability across Dana's global distribution network.
+    operationId: checkAvailability
+    method: GET
+    path: /availability
+  - name: Get Pricing
+    description: Retrieve customer- and quantity-specific pricing for parts.
+    operationId: getPricing
+    method: GET
+    path: /pricing
+  - name: Place Order
+    description: Submit a new order with line items and shipping/billing addresses.
+    operationId: placeOrder
+    method: POST
+    path: /orders
+  - name: Get Order Status
+    description: Track processing, shipping, and delivery for an existing order.
+    operationId: getOrderStatus
+    method: GET
+    path: /orders/{orderId}/status
+  - name: Get Advanced Shipping Notifications
+    description: Retrieve packing slips, tracking numbers, and estimated delivery dates.
+    operationId: getShippingNotifications
+    method: GET
+    path: /shipping/notifications
+use_cases:
+  - name: Distributor catalog integration
+    description: Sync Dana's part data and availability into partner e-commerce sites and ERPs.
+  - name: Service-shop ordering
+    description: Allow service shops to look up the right part for a vehicle and order it directly.
+  - name: Real-time fitment lookups
+    description: Embed year/make/model fitment lookups into third-party automotive marketplaces.
+  - name: Order tracking
+    description: Surface advanced shipping notifications and delivery status to end customers.
