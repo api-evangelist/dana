@@ -1,7 +1,7 @@
 aid: dana
 name: Dana
 url: https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml
-type: Contract
+kind: contract
 position: Consuming
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -14,7 +14,7 @@ tags:
 created: '2026-03-21'
 modified: '2026-04-28'
 specificationVersion: '0.19'
-xType: company
+kind: company
 apis:
   - aid: dana:aftermarket-api
     name: Dana Aftermarket API
@@ -55,7 +55,7 @@ common:
     url: https://www.dana.com/
   - type: Portal
     url: https://developer.danaaftermarket.com/
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/dana-context.jsonld
   - type: Vocabulary
     url: vocabulary/dana-vocabulary.yml
