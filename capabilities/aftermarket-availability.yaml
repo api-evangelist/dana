@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dana Aftermarket API — Availability
+  description: 'Dana Aftermarket API — Availability. 1 operations. Lead operation: Check inventory availability. Self-contained
+    Naftiko capability covering one Dana business surface.'
+  tags:
+  - Dana
+  - Availability
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DANA_API_KEY: DANA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: aftermarket-availability
+    baseUri: https://api.danaaftermarket.com
+    description: Dana Aftermarket API — Availability business capability. Self-contained, no shared references.
+    resources:
+    - name: availability
+      path: /availability
+      operations:
+      - name: checkavailability
+        method: GET
+        description: Check inventory availability
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: partNumber
+          in: query
+          type: string
+          description: The Dana part number to check.
+          required: true
+    authentication:
+      type: apikey
+      key: X-API-Key
+      value: '{{env.DANA_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: aftermarket-availability-rest
+    port: 8080
+    description: REST adapter for Dana Aftermarket API — Availability. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/availability
+      name: availability
+      description: REST surface for availability.
+      operations:
+      - method: GET
+        name: checkavailability
+        description: Check inventory availability
+        call: aftermarket-availability.checkavailability
+        with:
+          partNumber: rest.partNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: aftermarket-availability-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dana Aftermarket API — Availability. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: check-inventory-availability
+      description: Check inventory availability
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aftermarket-availability.checkavailability
+      with:
+        partNumber: tools.partNumber
+      outputParameters:
+      - type: object
+        mapping: $.

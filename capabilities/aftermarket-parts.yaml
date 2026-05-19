@@ -1,0 +1,135 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Dana Aftermarket API — Parts
+  description: 'Dana Aftermarket API — Parts. 2 operations. Lead operation: Search parts by application. Self-contained Naftiko
+    capability covering one Dana business surface.'
+  tags:
+  - Dana
+  - Parts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DANA_API_KEY: DANA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: aftermarket-parts
+    baseUri: https://api.danaaftermarket.com
+    description: Dana Aftermarket API — Parts business capability. Self-contained, no shared references.
+    resources:
+    - name: parts-search
+      path: /parts/search
+      operations:
+      - name: searchparts
+        method: GET
+        description: Search parts by application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: year
+          in: query
+          type: string
+          description: Vehicle year.
+        - name: make
+          in: query
+          type: string
+          description: Vehicle make.
+        - name: model
+          in: query
+          type: string
+          description: Vehicle model.
+    - name: parts-partNumber
+      path: /parts/{partNumber}
+      operations:
+      - name: getpartdetails
+        method: GET
+        description: Get part details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: partNumber
+          in: path
+          type: string
+          description: The Dana part number.
+          required: true
+    authentication:
+      type: apikey
+      key: X-API-Key
+      value: '{{env.DANA_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: aftermarket-parts-rest
+    port: 8080
+    description: REST adapter for Dana Aftermarket API — Parts. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/parts/search
+      name: parts-search
+      description: REST surface for parts-search.
+      operations:
+      - method: GET
+        name: searchparts
+        description: Search parts by application
+        call: aftermarket-parts.searchparts
+        with:
+          year: rest.year
+          make: rest.make
+          model: rest.model
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/parts/{partnumber}
+      name: parts-partnumber
+      description: REST surface for parts-partNumber.
+      operations:
+      - method: GET
+        name: getpartdetails
+        description: Get part details
+        call: aftermarket-parts.getpartdetails
+        with:
+          partNumber: rest.partNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: aftermarket-parts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Dana Aftermarket API — Parts. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: search-parts-application
+      description: Search parts by application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aftermarket-parts.searchparts
+      with:
+        year: tools.year
+        make: tools.make
+        model: tools.model
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-part-details
+      description: Get part details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aftermarket-parts.getpartdetails
+      with:
+        partNumber: tools.partNumber
+      outputParameters:
+      - type: object
+        mapping: $.
