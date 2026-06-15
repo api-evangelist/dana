@@ -1,0 +1,625 @@
+{
+  "item": [
+    {
+      "id": "908b75ec-7742-4f3e-add4-ebf9466d01d0",
+      "name": "Availability",
+      "description": {
+        "content": "Check inventory availability.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a7face3-386b-43c4-abde-0d16313bd4dd",
+          "name": "Check inventory availability",
+          "request": {
+            "name": "Check inventory availability",
+            "description": {
+              "content": "Checks real-time inventory availability from Dana's global distribution network for specified parts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "availability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "partNumber",
+                  "value": "<string>",
+                  "description": "(Required) The Dana part number to check."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b859b67f-459b-45d4-953b-0464a2260f23",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "availability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "partNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5b3f7a4c-1a27-435a-8137-9adbba8c8787",
+      "name": "Orders",
+      "description": {
+        "content": "Place and manage orders.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "91e06a46-2619-4ace-91cb-2d0624d0a1bb",
+          "name": "Place an order",
+          "request": {
+            "name": "Place an order",
+            "description": {
+              "content": "Places a new order for parts through Dana's aftermarket platform with shipping and billing details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"partNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"partNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"shippingAddress\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "56dc2731-5416-46d8-b037-998ac1b8c199",
+              "name": "Order placed successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"items\": [\n    {\n      \"partNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"partNumber\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"shippingAddress\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87426bf0-2e19-4ef7-9120-6e232a71e3b0",
+          "name": "Get order status",
+          "request": {
+            "name": "Get order status",
+            "description": {
+              "content": "Retrieves the current status of an order including processing, shipping, and delivery information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":orderId",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) The order identifier."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b406ee7c-ba5e-45f0-a577-4b04018dbb5c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":orderId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) The order identifier."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a35c8fd9-8200-4b86-b76e-6e09216d1e75",
+      "name": "Parts",
+      "description": {
+        "content": "Search and retrieve part information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f50630f-61a2-49ec-8afd-63e8dd432a54",
+          "name": "Search parts by application",
+          "request": {
+            "name": "Search parts by application",
+            "description": {
+              "content": "Searches for parts by vehicle application including year, make, model, and component type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "parts",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<string>",
+                  "description": "Vehicle year."
+                },
+                {
+                  "disabled": false,
+                  "key": "make",
+                  "value": "<string>",
+                  "description": "Vehicle make."
+                },
+                {
+                  "disabled": false,
+                  "key": "model",
+                  "value": "<string>",
+                  "description": "Vehicle model."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42ecdb8f-c7bb-484a-af15-17fb184ccf60",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parts",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "make",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "model",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f46eebf-ce89-4271-bf6e-1c2c8189040f",
+          "name": "Get part details",
+          "request": {
+            "name": "Get part details",
+            "description": {
+              "content": "Retrieves detailed information for a specific part including specifications, compatibility, and images.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "parts",
+                ":partNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "partNumber",
+                  "description": "(Required) The Dana part number."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6216670-3d6f-4149-bdac-9aa32600dc10",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parts",
+                    ":partNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "partNumber",
+                      "description": "(Required) The Dana part number."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9659fe49-2c68-49b2-87b8-1ebe662c6d25",
+      "name": "Pricing",
+      "description": {
+        "content": "Retrieve pricing information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4321fb29-5370-417a-a710-e1517c746de1",
+          "name": "Get pricing",
+          "request": {
+            "name": "Get pricing",
+            "description": {
+              "content": "Retrieves current pricing for specified parts based on customer account and quantity.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "partNumber",
+                  "value": "<string>",
+                  "description": "(Required) The Dana part number."
+                },
+                {
+                  "disabled": false,
+                  "key": "quantity",
+                  "value": "<integer>",
+                  "description": "Quantity for pricing calculation."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c336a73-f6cd-4c40-96be-863cc78c08c6",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "partNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "quantity",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "38d155d5-590a-407d-b31d-e2b66b3694a9",
+      "name": "Shipping",
+      "description": {
+        "content": "Track shipments and delivery status.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fb590715-d875-4de7-9032-3cbc351e594d",
+          "name": "Get advanced shipping notifications",
+          "request": {
+            "name": "Get advanced shipping notifications",
+            "description": {
+              "content": "Retrieves advanced shipping notifications including packing slips, tracking numbers, and estimated delivery dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipping",
+                "notifications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>",
+                  "description": "Filter by order identifier."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d118a902-d25a-4c07-bf52-e26c5df2a5dd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipping",
+                    "notifications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.danaaftermarket.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "08101156-dd29-48e2-a7a3-ab0cc4a201a2",
+    "name": "Dana Aftermarket API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.",
+      "type": "text/plain"
+    }
+  }
+}

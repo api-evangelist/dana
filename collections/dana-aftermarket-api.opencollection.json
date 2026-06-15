@@ -1,0 +1,197 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dana Aftermarket API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search parts by application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/parts/search",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle year."
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle make."
+              },
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle model."
+              }
+            ]
+          },
+          "docs": "Searches for parts by vehicle application including year, make, model, and component type."
+        },
+        {
+          "info": {
+            "name": "Get part details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/parts/:partNumber",
+            "params": [
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "path",
+                "description": "The Dana part number."
+              }
+            ]
+          },
+          "docs": "Retrieves detailed information for a specific part including specifications, compatibility, and images."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Availability",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check inventory availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/availability",
+            "params": [
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "query",
+                "description": "The Dana part number to check."
+              }
+            ]
+          },
+          "docs": "Checks real-time inventory availability from Dana's global distribution network for specified parts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pricing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get pricing",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/pricing",
+            "params": [
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "query",
+                "description": "The Dana part number."
+              },
+              {
+                "name": "quantity",
+                "value": "",
+                "type": "query",
+                "description": "Quantity for pricing calculation."
+              }
+            ]
+          },
+          "docs": "Retrieves current pricing for specified parts based on customer account and quantity."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Place an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.danaaftermarket.com/orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Places a new order for parts through Dana's aftermarket platform with shipping and billing details."
+        },
+        {
+          "info": {
+            "name": "Get order status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/orders/:orderId/status",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "The order identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves the current status of an order including processing, shipping, and delivery information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shipping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get advanced shipping notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/shipping/notifications",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by order identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves advanced shipping notifications including packing slips, tracking numbers, and estimated delivery dates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
