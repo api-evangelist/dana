@@ -4,7 +4,7 @@ url: https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.
 kind: company
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Aftermarket
   - Auto Parts
@@ -24,7 +24,7 @@ apis:
       - Drivetrain
       - eCommerce
       - Supply Chain
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.danaaftermarket.com
     humanURL: https://developer.danaaftermarket.com/
     properties:
