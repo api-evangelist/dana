@@ -49,6 +49,10 @@ apis:
       global distribution network, obtain real-time quotes, and manage orders with confirmation, shipping details,
       packing slips, and tracking numbers.
 common:
+  - type: DomainSecurity
+    url: security/dana-domain-security.yml
+  - type: Authentication
+    url: authentication/dana-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/dana-incorporated
   - type: Website
