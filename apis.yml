@@ -49,6 +49,8 @@ apis:
       global distribution network, obtain real-time quotes, and manage orders with confirmation, shipping details,
       packing slips, and tracking numbers.
 common:
+  - type: AgenticAccess
+    url: agentic-access/dana-agentic-access.yml
   - type: DomainSecurity
     url: security/dana-domain-security.yml
   - type: Authentication
