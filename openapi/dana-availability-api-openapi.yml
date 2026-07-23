@@ -1,0 +1,34 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket Availability API
+  description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+- url: https://api.danaaftermarket.com
+tags:
+- name: Availability
+  description: Check inventory availability.
+paths:
+  /availability:
+    get:
+      operationId: checkAvailability
+      summary: Check inventory availability
+      description: Checks real-time inventory availability from Dana's global distribution network for specified parts.
+      tags:
+      - Availability
+      parameters:
+      - name: partNumber
+        in: query
+        required: true
+        description: The Dana part number to check.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key

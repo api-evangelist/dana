@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket Availability Pricing API
+  description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+- url: https://api.danaaftermarket.com
+tags:
+- name: Pricing
+  description: Retrieve pricing information.
+paths:
+  /pricing:
+    get:
+      operationId: getPricing
+      summary: Get pricing
+      description: Retrieves current pricing for specified parts based on customer account and quantity.
+      tags:
+      - Pricing
+      parameters:
+      - name: partNumber
+        in: query
+        required: true
+        description: The Dana part number.
+        schema:
+          type: string
+      - name: quantity
+        in: query
+        description: Quantity for pricing calculation.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key

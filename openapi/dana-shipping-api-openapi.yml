@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket Availability Shipping API
+  description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+- url: https://api.danaaftermarket.com
+tags:
+- name: Shipping
+  description: Track shipments and delivery status.
+paths:
+  /shipping/notifications:
+    get:
+      operationId: getShippingNotifications
+      summary: Get advanced shipping notifications
+      description: Retrieves advanced shipping notifications including packing slips, tracking numbers, and estimated delivery dates.
+      tags:
+      - Shipping
+      parameters:
+      - name: orderId
+        in: query
+        description: Filter by order identifier.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key

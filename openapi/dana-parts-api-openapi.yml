@@ -1,0 +1,60 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket Availability Parts API
+  description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+- url: https://api.danaaftermarket.com
+tags:
+- name: Parts
+  description: Search and retrieve part information.
+paths:
+  /parts/search:
+    get:
+      operationId: searchParts
+      summary: Search parts by application
+      description: Searches for parts by vehicle application including year, make, model, and component type.
+      tags:
+      - Parts
+      parameters:
+      - name: year
+        in: query
+        description: Vehicle year.
+        schema:
+          type: string
+      - name: make
+        in: query
+        description: Vehicle make.
+        schema:
+          type: string
+      - name: model
+        in: query
+        description: Vehicle model.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+  /parts/{partNumber}:
+    get:
+      operationId: getPartDetails
+      summary: Get part details
+      description: Retrieves detailed information for a specific part including specifications, compatibility, and images.
+      tags:
+      - Parts
+      parameters:
+      - name: partNumber
+        in: path
+        required: true
+        description: The Dana part number.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key

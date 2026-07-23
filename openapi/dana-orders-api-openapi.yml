@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Dana Aftermarket Availability Orders API
+  description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
+  version: '1.0'
+servers:
+- url: https://api.danaaftermarket.com
+tags:
+- name: Orders
+  description: Place and manage orders.
+paths:
+  /orders:
+    post:
+      operationId: placeOrder
+      summary: Place an order
+      description: Places a new order for parts through Dana's aftermarket platform with shipping and billing details.
+      tags:
+      - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      partNumber:
+                        type: string
+                      quantity:
+                        type: integer
+                shippingAddress:
+                  type: object
+      responses:
+        '201':
+          description: Order placed successfully
+  /orders/{orderId}/status:
+    get:
+      operationId: getOrderStatus
+      summary: Get order status
+      description: Retrieves the current status of an order including processing, shipping, and delivery information.
+      tags:
+      - Orders
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        description: The order identifier.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
