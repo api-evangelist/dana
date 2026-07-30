@@ -2,9 +2,22 @@ aid: dana
 name: Dana
 url: https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml
 kind: company
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dana.png
 tags:
   - Aftermarket
   - Auto Parts
@@ -16,38 +29,116 @@ created: '2026-03-21'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: dana:aftermarket-api
-    name: Dana Aftermarket API
-    tags:
-      - Aftermarket
-      - Auto Parts
-      - Drivetrain
-      - eCommerce
-      - Supply Chain
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.danaaftermarket.com
-    humanURL: https://developer.danaaftermarket.com/
-    properties:
-      - url: https://developer.danaaftermarket.com/
-        type: Portal
-      - url: https://developer.danaaftermarket.com/
-        type: Documentation
-      - url: openapi/dana-aftermarket-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/part.json
-        type: JSONSchema
-      - url: json-schema/order.json
-        type: JSONSchema
-      - url: rules/dana-aftermarket-api-rules.yml
-        type: Rules
-      - url: capabilities/dana-aftermarket-api-capabilities.yml
-        type: Capabilities
-    description: >-
-      The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with eight active
-      APIs including advanced shipping notification, availability, deep linking, order status, part details, part search
-      by application, place order, and pricing. The APIs enable customers to display inventory availability from Dana's
-      global distribution network, obtain real-time quotes, and manage orders with confirmation, shipping details,
-      packing slips, and tracking numbers.
+- aid: dana:dana-availability-api
+  name: Dana Availability API
+  description: Check inventory availability.
+  humanURL: https://developer.danaaftermarket.com/
+  baseURL: https://api.danaaftermarket.com
+  tags:
+  - Availability
+  properties:
+  - type: OpenAPI
+    url: openapi/dana-availability-api-openapi.yml
+  - type: Portal
+    url: https://developer.danaaftermarket.com/
+  - type: Documentation
+    url: https://developer.danaaftermarket.com/
+  - type: JSONSchema
+    url: json-schema/part.json
+  - type: JSONSchema
+    url: json-schema/order.json
+  - type: Rules
+    url: rules/dana-aftermarket-api-rules.yml
+  - type: Capabilities
+    url: capabilities/dana-aftermarket-api-capabilities.yml
+- aid: dana:dana-orders-api
+  name: Dana Orders API
+  description: Place and manage orders.
+  humanURL: https://developer.danaaftermarket.com/
+  baseURL: https://api.danaaftermarket.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/dana-orders-api-openapi.yml
+  - type: Portal
+    url: https://developer.danaaftermarket.com/
+  - type: Documentation
+    url: https://developer.danaaftermarket.com/
+  - type: JSONSchema
+    url: json-schema/part.json
+  - type: JSONSchema
+    url: json-schema/order.json
+  - type: Rules
+    url: rules/dana-aftermarket-api-rules.yml
+  - type: Capabilities
+    url: capabilities/dana-aftermarket-api-capabilities.yml
+- aid: dana:dana-parts-api
+  name: Dana Parts API
+  description: Search and retrieve part information.
+  humanURL: https://developer.danaaftermarket.com/
+  baseURL: https://api.danaaftermarket.com
+  tags:
+  - Parts
+  properties:
+  - type: OpenAPI
+    url: openapi/dana-parts-api-openapi.yml
+  - type: Portal
+    url: https://developer.danaaftermarket.com/
+  - type: Documentation
+    url: https://developer.danaaftermarket.com/
+  - type: JSONSchema
+    url: json-schema/part.json
+  - type: JSONSchema
+    url: json-schema/order.json
+  - type: Rules
+    url: rules/dana-aftermarket-api-rules.yml
+  - type: Capabilities
+    url: capabilities/dana-aftermarket-api-capabilities.yml
+- aid: dana:dana-pricing-api
+  name: Dana Pricing API
+  description: Retrieve pricing information.
+  humanURL: https://developer.danaaftermarket.com/
+  baseURL: https://api.danaaftermarket.com
+  tags:
+  - Pricing
+  properties:
+  - type: OpenAPI
+    url: openapi/dana-pricing-api-openapi.yml
+  - type: Portal
+    url: https://developer.danaaftermarket.com/
+  - type: Documentation
+    url: https://developer.danaaftermarket.com/
+  - type: JSONSchema
+    url: json-schema/part.json
+  - type: JSONSchema
+    url: json-schema/order.json
+  - type: Rules
+    url: rules/dana-aftermarket-api-rules.yml
+  - type: Capabilities
+    url: capabilities/dana-aftermarket-api-capabilities.yml
+- aid: dana:dana-shipping-api
+  name: Dana Shipping API
+  description: Track shipments and delivery status.
+  humanURL: https://developer.danaaftermarket.com/
+  baseURL: https://api.danaaftermarket.com
+  tags:
+  - Shipping
+  properties:
+  - type: OpenAPI
+    url: openapi/dana-shipping-api-openapi.yml
+  - type: Portal
+    url: https://developer.danaaftermarket.com/
+  - type: Documentation
+    url: https://developer.danaaftermarket.com/
+  - type: JSONSchema
+    url: json-schema/part.json
+  - type: JSONSchema
+    url: json-schema/order.json
+  - type: Rules
+    url: rules/dana-aftermarket-api-rules.yml
+  - type: Capabilities
+    url: capabilities/dana-aftermarket-api-capabilities.yml
 common:
   - type: AgenticAccess
     url: agentic-access/dana-agentic-access.yml
