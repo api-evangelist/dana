@@ -1,0 +1,22 @@
+{
+  "provider": "dana",
+  "sources": [
+    "dana-availability-api-openapi.yml",
+    "dana-orders-api-openapi.yml",
+    "dana-parts-api-openapi.yml",
+    "dana-pricing-api-openapi.yml",
+    "dana-shipping-api-openapi.yml"
+  ],
+  "outputs": [
+    "dana-availability-api-openapi.yml",
+    "dana-orders-api-openapi.yml",
+    "dana-parts-api-openapi.yml",
+    "dana-pricing-api-openapi.yml",
+    "dana-shipping-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
