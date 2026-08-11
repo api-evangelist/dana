@@ -49,8 +49,6 @@ apis:
     url: json-schema/order.json
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
-  - type: Capabilities
-    url: capabilities/dana-aftermarket-api-capabilities.yml
 - aid: dana:dana-orders-api
   name: Dana Orders API
   description: Place and manage orders.
@@ -71,8 +69,6 @@ apis:
     url: json-schema/order.json
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
-  - type: Capabilities
-    url: capabilities/dana-aftermarket-api-capabilities.yml
 - aid: dana:dana-parts-api
   name: Dana Parts API
   description: Search and retrieve part information.
@@ -93,8 +89,6 @@ apis:
     url: json-schema/order.json
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
-  - type: Capabilities
-    url: capabilities/dana-aftermarket-api-capabilities.yml
 - aid: dana:dana-pricing-api
   name: Dana Pricing API
   description: Retrieve pricing information.
@@ -115,8 +109,6 @@ apis:
     url: json-schema/order.json
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
-  - type: Capabilities
-    url: capabilities/dana-aftermarket-api-capabilities.yml
 - aid: dana:dana-shipping-api
   name: Dana Shipping API
   description: Track shipments and delivery status.
@@ -137,8 +129,6 @@ apis:
     url: json-schema/order.json
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
-  - type: Capabilities
-    url: capabilities/dana-aftermarket-api-capabilities.yml
 common:
   - type: AgenticAccess
     url: agentic-access/dana-agentic-access.yml
