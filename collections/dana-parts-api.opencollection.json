@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dana Aftermarket Availability Parts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search parts by application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/parts/search",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle year."
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle make."
+              },
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "Vehicle model."
+              }
+            ]
+          },
+          "docs": "Searches for parts by vehicle application including year, make, model, and component type."
+        },
+        {
+          "info": {
+            "name": "Get part details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/parts/:partNumber",
+            "params": [
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "path",
+                "description": "The Dana part number."
+              }
+            ]
+          },
+          "docs": "Retrieves detailed information for a specific part including specifications, compatibility, and images."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

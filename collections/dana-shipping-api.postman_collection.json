@@ -1,0 +1,104 @@
+{
+  "item": [
+    {
+      "id": "a396d585-3146-490f-a863-6334954a9650",
+      "name": "Shipping",
+      "description": {
+        "content": "Track shipments and delivery status.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d592c5f7-9fed-4a60-9e4f-496bb4d46400",
+          "name": "Get advanced shipping notifications",
+          "request": {
+            "name": "Get advanced shipping notifications",
+            "description": {
+              "content": "Retrieves advanced shipping notifications including packing slips, tracking numbers, and estimated delivery dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipping",
+                "notifications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>",
+                  "description": "Filter by order identifier."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c983add-1eaa-4d91-801f-58b4d5262852",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipping",
+                    "notifications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.danaaftermarket.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ef68c34d-3a80-4a21-831c-ff62eb25fd4b",
+    "name": "Dana Aftermarket Availability Shipping API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.",
+      "type": "text/plain"
+    }
+  }
+}

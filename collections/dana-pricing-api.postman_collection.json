@@ -1,0 +1,112 @@
+{
+  "item": [
+    {
+      "id": "0fd1f69c-15d7-46ba-9c29-434aa752abc1",
+      "name": "Pricing",
+      "description": {
+        "content": "Retrieve pricing information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4d99fa4-90f2-4aff-80c3-4d7757d4911d",
+          "name": "Get pricing",
+          "request": {
+            "name": "Get pricing",
+            "description": {
+              "content": "Retrieves current pricing for specified parts based on customer account and quantity.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "partNumber",
+                  "value": "<string>",
+                  "description": "(Required) The Dana part number."
+                },
+                {
+                  "disabled": false,
+                  "key": "quantity",
+                  "value": "<integer>",
+                  "description": "Quantity for pricing calculation."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc5f2360-639a-4230-969e-09c995f1119d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "partNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "quantity",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.danaaftermarket.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0ab531ec-348a-4bc8-8306-f015bd90778a",
+    "name": "Dana Aftermarket Availability Pricing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dana Aftermarket Availability Shipping API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get advanced shipping notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/shipping/notifications",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by order identifier."
+              }
+            ]
+          },
+          "docs": "Retrieves advanced shipping notifications including packing slips, tracking numbers, and estimated delivery dates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

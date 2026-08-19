@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dana Aftermarket Availability API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Availability",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check inventory availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.danaaftermarket.com/availability",
+            "params": [
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "query",
+                "description": "The Dana part number to check."
+              }
+            ]
+          },
+          "docs": "Checks real-time inventory availability from Dana's global distribution network for specified parts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
