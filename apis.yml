@@ -151,6 +151,38 @@ apis:
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
 common:
+  - type: WellKnown
+    url: well-known/dana-well-known.yml
+  - type: OAuthScopes
+    url: scopes/dana-scopes.yml
+  - type: OpenIDConnect
+    url: https://www.dana.com/.well-known/openid-configuration
+  - type: Conformance
+    url: conformance/dana-conformance.yml
+  - type: Compliance
+    url: conformance/dana-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/dana-lifecycle.yml
+  - type: Packages
+    url: packages/dana-packages.yml
+  - type: LLMsTxt
+    url: llms/dana-llms.txt
+  - type: TermsOfService
+    url: https://www.dana.com/terms-of-use/
+  - type: PrivacyPolicy
+    url: https://www.dana.com/privacy-notice/
+  - type: Support
+    url: https://www.dana.com/contact/
+  - type: SignUp
+    url: https://www.danaaftermarket.com/MyAccount/CreateAccount
+  - type: Login
+    url: https://www.danaaftermarket.com/SignIn
+  - type: Investor Relations
+    url: https://www.dana.com/investors/
+  - type: Newsroom
+    url: https://www.dana.com/newsroom/
+  - type: Alias
+    url: https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml
   - type: AgenticAccess
     url: agentic-access/dana-agentic-access.yml
   - type: DomainSecurity

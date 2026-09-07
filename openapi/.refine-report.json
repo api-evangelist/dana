@@ -17,6 +17,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "dana-availability-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "dana-orders-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "dana-parts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "dana-pricing-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "dana-shipping-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
