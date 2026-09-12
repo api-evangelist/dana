@@ -1,23 +1,21 @@
 ---
 kin_checks:
   slug: dana
-  schema_version: 0.19.0
-  scored_at: '2026-09-06'
-  run_ts: 2026-09-06T224210
+  schema_version: 0.21.0
+  scored_at: '2026-09-12'
+  run_ts: 2026-09-12T080032
   note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.19.0.yml; counts below let you verify that.
+    in rubric/scoring-0.21.0.yml; counts below let you verify that.
   counts:
-    total: 132
-    earned: 35
-    partial: 6
-    missed: 65
+    total: 136
+    earned: 41
+    partial: 11
+    missed: 58
     na: 26
   checks:
   - id: multiple_apis
     status: missed
   - id: well_known_published
-    status: missed
-  - id: llms_txt_published
     status: missed
   - id: apis_json_self_hosted
     status: missed
@@ -53,8 +51,6 @@ kin_checks:
   - id: lifecycle_documented
     status: missed
   - id: domain_standard_conformance
-    status: missed
-  - id: conformance_declared
     status: missed
   - id: overlay_published
     status: missed
@@ -92,33 +88,23 @@ kin_checks:
     status: missed
   - id: agent_skill_present
     status: missed
-  - id: support_channel
-    status: missed
   - id: blog_present
     status: missed
   - id: plans_multiple
     status: missed
   - id: pricing_link
     status: missed
-  - id: sign_up_present
-    status: missed
-  - id: terms_of_service
-    status: missed
-  - id: privacy_policy
-    status: missed
-  - id: compliance_published
-    status: missed
   - id: trust_center
-    status: missed
-  - id: reg_oauth_scopes
     status: missed
   - id: reg_vulnerability_disclosure
     status: missed
-  - id: reg_terms_of_service
+  - id: upsert_outcome_discriminator
     status: missed
-  - id: reg_privacy_policy
+  - id: upsert_alternate_key
     status: missed
-  - id: reg_compliance_published
+  - id: upsert_named
+    status: missed
+  - id: upsert_declared_conflict
     status: missed
   - id: reversibility_documented
     status: missed
@@ -157,9 +143,29 @@ kin_checks:
     status: partial
     earned: 2.0
     detail: pointer liveness 0.5
+  - id: support_channel
+    status: partial
+    earned: 1.0
+    detail: pointer liveness 0.5
   - id: plans_present
     status: partial
     earned: 2.0
+  - id: terms_of_service
+    status: partial
+    earned: 2.0
+    detail: pointer liveness 0.5
+  - id: privacy_policy
+    status: partial
+    earned: 2.0
+    detail: pointer liveness 0.5
+  - id: reg_terms_of_service
+    status: partial
+    earned: 2.0
+    detail: pointer liveness 0.5
+  - id: reg_privacy_policy
+    status: partial
+    earned: 2.0
+    detail: pointer liveness 0.5
   - id: agentic_access
     status: partial
     earned: 2.5
