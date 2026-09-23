@@ -1,11 +1,7 @@
 {
   "provider": "dana",
   "sources": [
-    "dana-availability-api-openapi.yml",
-    "dana-orders-api-openapi.yml",
-    "dana-parts-api-openapi.yml",
-    "dana-pricing-api-openapi.yml",
-    "dana-shipping-api-openapi.yml"
+    "_original/dana-aftermarket-api-openapi.yml"
   ],
   "outputs": [
     "dana-availability-api-openapi.yml",
@@ -18,12 +14,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "dana-availability-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "dana-orders-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "dana-parts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "dana-pricing-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "dana-shipping-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "dana-aftermarket-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "dana-availability-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dana-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dana-parts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dana-pricing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dana-shipping-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,7 +1,9 @@
 ---
 title: Dana named inaugural winner of the EY/Microsoft Digital ...
 url: https://www.prnewswire.com/news-releases/dana-named-inaugural-winner-of-the-eymicrosoft-digital-innovation-award-300251296.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Dana Holding" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Dana Aftermarket Availability Pricing API
+  title: Dana Aftermarket Pricing API
   description: The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with APIs for part search, availability, pricing, ordering, and shipment tracking across Dana's global distribution network.
   version: '1.0'
 servers:

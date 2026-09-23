@@ -1,7 +1,9 @@
 ---
 title: 'Dana Holding Corporation: Optimizing Products and Processes ...'
 url: https://www.hpcwire.com/aiwire/2011/06/09/dana_holding_corporation_optimizing_products_and_processes_with_hpc/
-date: '2026-05-25'
+published: '2011-06-09'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Dana Holding" press release artificial intelligence'
 position: 3
 source: serpapi-google
