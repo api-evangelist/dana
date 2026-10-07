@@ -113,10 +113,8 @@ apis:
 unitEconomics:
   - name: Cost per Part
     metric: billed_cost / parts_units
-    target: TBD
   - name: Cost per Order
     metric: billed_cost / parts_orders
-    target: TBD
 maintainers:
   - FN: API Evangelist
     email: info@apievangelist.com
