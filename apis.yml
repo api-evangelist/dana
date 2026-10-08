@@ -151,6 +151,12 @@ apis:
   - type: Rules
     url: rules/dana-aftermarket-api-rules.yml
 common:
+  - type: Plans
+    url: plans/dana-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/dana-rate-limits.yml
+  - type: FinOps
+    url: finops/dana-finops.yml
   - type: WellKnown
     url: well-known/dana-well-known.yml
   - type: OAuthScopes
