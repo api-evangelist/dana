@@ -1,4 +1,4 @@
-# Dana (dana)
+# Dana
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,64 +66,159 @@
 
 Dana Incorporated is a global supplier of fully integrated drivetrain and electrified propulsion systems for passenger vehicles, commercial trucks, and off-highway equipment. Dana operates a developer portal at developer.danaaftermarket.com offering eight APIs for aftermarket parts search, availability, pricing, ordering, and shipment tracking across its global distribution network.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/dana/refs/heads/main/apis.yml)
+**Areas:** Aftermarket · Auto Parts · Drivetrain · E-Commerce · Supply Chain · Fortune 500
 
-## Scope
+## Dana on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Dana is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/dana/](https://apis.io/providers/dana/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Aftermarket
-- Auto Parts
-- Drivetrain
-- eCommerce
-- Supply Chain
+- [Dana Availability API](https://apis.io/apis/dana/dana-availability-api/) — Check inventory availability.
+- [Dana Orders API](https://apis.io/apis/dana/dana-orders-api/) — Place and manage orders.
+- [Dana Parts API](https://apis.io/apis/dana/dana-parts-api/) — Search and retrieve part information.
+- [Dana Pricing API](https://apis.io/apis/dana/dana-pricing-api/) — Retrieve pricing information.
+- [Dana Shipping API](https://apis.io/apis/dana/dana-shipping-api/) — Track shipments and delivery status.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Dana Aftermarket API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Dana Aftermarket API provides programmatic access to Dana's aftermarket e-commerce platform with eight active APIs including advanced shipping notification, availability, deep linking, order status, part details, part search by application, place order, and pricing. The APIs enable customers to display inventory availability from Dana's global distribution network, obtain real-time quotes, and manage orders with confirmation, shipping details, packing slips, and tracking numbers.
+- [Dana Agentic Access](https://apis.io/agentic-access/dana/dana-agentic-access/)
 
-- **Human URL:** [https://developer.danaaftermarket.com/](https://developer.danaaftermarket.com/)
-- **Base URL:** `https://api.danaaftermarket.com`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Aftermarket
-- Auto Parts
-- Drivetrain
-- eCommerce
-- Supply Chain
+- [Order](https://apis.io/schemas/dana/order/)
+- [Part](https://apis.io/schemas/dana/part/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Portal](https://developer.danaaftermarket.com/)
-- [Documentation](https://developer.danaaftermarket.com/)
-- [OpenAPI](openapi/dana-aftermarket-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/dana-aftermarket-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dana-aftermarket-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/part.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/order.json) — [JSON Schema](https://json-schema.org/specification)
-- [Rules](rules/dana-aftermarket-api-rules.yml)
-- [Capabilities](capabilities/dana-aftermarket-api-capabilities.yml)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Dana Context](https://apis.io/jsonld/dana/dana-context/)
 
-- [LinkedIn](https://www.linkedin.com/company/dana-incorporated)
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Dana Aftermarket Vocabulary](https://apis.io/vocabularies/dana/dana-vocabulary/)
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Dana Aftermarket API](https://apis.io/collections/dana/open-dana-aftermarket-api/)
+- [Dana Aftermarket Availability API](https://apis.io/collections/dana/open-dana-availability-api/)
+- [Dana Aftermarket Availability Orders API](https://apis.io/collections/dana/open-dana-orders-api/)
+- [Dana Aftermarket Availability Parts API](https://apis.io/collections/dana/open-dana-parts-api/)
+- [Dana Aftermarket Availability Pricing API](https://apis.io/collections/dana/open-dana-pricing-api/)
+- [Dana Aftermarket Availability Shipping API](https://apis.io/collections/dana/open-dana-shipping-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Dana — aftermarket api rules](https://apis.io/rules/dana/dana-aftermarket-api-rules/)
+- [Dana — jsonschema rules](https://apis.io/rules/dana/dana-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Dana Authentication](https://apis.io/security/dana/dana-authentication/)
+- [Dana Domain Security](https://apis.io/security/dana/dana-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Dana Scopes](https://apis.io/scopes/dana/dana-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Dana Plans Pricing](https://apis.io/plans/dana/dana-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Dana Rate Limits](https://apis.io/rate-limits/dana/dana-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Dana Finops](https://apis.io/finops/dana/dana-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.dana.com/)
-- [Portal](https://developer.danaaftermarket.com/)
-- [JSON-LD](json-ld/dana-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Vocabulary](vocabulary/dana-vocabulary.yml)
+- [Sign up](https://www.danaaftermarket.com/MyAccount/CreateAccount)
+- [Support](https://www.dana.com/contact/)
+- [Terms of service](https://www.dana.com/terms-of-use/)
+- [Privacy policy](https://www.dana.com/privacy-notice/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** API Evangelist
-**Email:** info@apievangelist.com
+**Kin Score 42.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 74.1 |
+| Contract quality | 53.2 |
+| Contract governance | 45.5 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 36.8 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/dana/](https://apis.io/providers/dana/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Dana: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/dana/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
